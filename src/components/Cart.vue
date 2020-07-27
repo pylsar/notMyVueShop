@@ -1,23 +1,31 @@
 <template>
     <div class="cart">
         <h2>Cart</h2>
-        <CartItem v-if="CART.length"/>
+        <CartItem 
+            v-for="item in cartData"
+            :key='item.article'
+            :cartItemData='item'
+        />
     </div>
 </template>
 
 <script>
 import CartItem from './CartItem.vue'
-import { mapGetters } from 'vuex'
+
 export default {
     name: 'Cart',
     components: {
         CartItem
     },
-    computed: {
-        ...mapGetters([
-            'CART'
-        ])
+    props: {
+        cartData: {
+            type: Array,
+            default(){
+                return[]
+            }
+        }
     }
+    
     
 }
 </script>
