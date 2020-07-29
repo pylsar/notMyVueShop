@@ -1,6 +1,6 @@
 <template>
     <div class="catalog">
-        <h1>Catalog 5-1353</h1>
+        <h1>Catalog 5-2030</h1>
         <div class="catalog__list">
         <CatalogItem 
             v-for='product in PRODUCTS'

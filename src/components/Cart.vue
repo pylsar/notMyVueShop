@@ -2,9 +2,10 @@
     <div class="cart">
         <h2>Cart</h2>
         <CartItem 
-            v-for="item in cartData"
+            v-for="(item, index) in cartData"
             :key='item.article'
             :cartItemData='item'
+            :deleteFromCart='deleteFromCart(index)'
         />
     </div>
 </template>
@@ -23,6 +24,11 @@ export default {
             default(){
                 return[]
             }
+        }
+    },
+    methods:{
+        deleteFromCart(index){
+            console.log(index)
         }
     }
     
