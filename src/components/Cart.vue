@@ -12,6 +12,7 @@
 
 <script>
 import CartItem from './CartItem.vue'
+import {mapActions} from 'vuex'
 
 export default {
     name: 'Cart',
@@ -27,8 +28,11 @@ export default {
         }
     },
     methods:{
+        ...mapActions([
+            'DELETE_FROM_CART'
+        ]),
         deleteFromCart(index){
-            console.log(index)
+            this.DELETE_FROM_CART(index)
         }
     }
     
